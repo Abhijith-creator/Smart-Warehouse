@@ -1,33 +1,66 @@
-### smart_warehouse
+# Smart Warehouse Management System
 
-Demo Smart Warehouse Management System
+A **Frappe** app for managing warehouse items, orders, users, and scan logs via APIs.  
 
-### Installation
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app smart_warehouse
-```
+## ℹ️ About
 
-### Contributing
+The **Smart Warehouse Management System** is a Frappe-based application designed to simplify warehouse operations.  
+It allows warehouse staff and managers to:
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+- Track inventory items with details like code, name, quantity, and location.  
+- Manage orders, including creation, status updates, and viewing order history.  
+- Maintain warehouse user accounts with roles and contact details.  
+- Log item scans for inward and outward movements and review scan history.  
 
-```bash
-cd apps/smart_warehouse
-pre-commit install
-```
+The system is API-driven, making it easy to integrate with other applications or front-end interfaces.  
+It provides clear responses for both successful operations and error cases, ensuring smooth automation and monitoring of warehouse activities.
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+## 🚀 Features
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+- **Inventory Management**: Track items with code, name, quantity, and location.  
+- **Order Management**: Create, update, and track order history.  
+- **User Management**: Maintain warehouse user accounts with roles and contact info.  
+- **Scan Logging**: Log item scans for inward/outward movements and review history.  
+- **API-driven**: Easy integration with other applications or front-end interfaces.  
 
-### License
 
-mit
+## 🛠️ Tech Stack
+
+The Smart Warehouse Management System is built using the following technologies:
+
+- **Framework:** [Frappe Framework](https://frappeframework.com/)  
+- **Programming Language:** Python 3.12+  
+- **Frontend:** JavaScript (for DocType scripts)  
+- **Database:** MariaDB / MySQL  
+- **APIs:** REST API endpoints (JSON-based)  
+- **Package & Build Management:** Yarn, Node.js  
+- **Version Control:** Git & GitHub  
+- **Development Server:** Frappe Bench  
+
+## Installation
+
+Follow these steps to get the Smart Warehouse app running:
+
+1. **Clone the repo**
+- cd ~/frappe-bench/apps
+- git clone https://github.com/Abhijith-creator/smartwarehouse.git
+- cd ..
+
+2. **Install the app on your site**
+- bench --site <site_name> install-app smart_warehouse
+- bench --site <site_name> migrate
+- bench build
+
+
+## Test APIs
+
+Import **smart_warehouse/api/smart_warehouse_collection.json** in Postman or Thunder Client and try endpoints like create_item, get_item, update_item, etc.
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
+[![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)  
+[![Frappe](https://img.shields.io/badge/Frappe-v15-orange)](https://frappeframework.com/)  
+
