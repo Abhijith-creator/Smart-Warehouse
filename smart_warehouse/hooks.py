@@ -5,6 +5,12 @@ app_description = "Demo Smart Warehouse Management System"
 app_email = "abhijithanbalagan@gmail.com"
 app_license = "mit"
 
+override_whitelisted_methods = {
+    "smart_warehouse.api.warehouse_apis.create_item": "smart_warehouse.api.warehouse_apis.create_item",
+    "smart_warehouse.api.warehouse_apis.list_items": "smart_warehouse.api.warehouse_apis.list_items",
+    "smart_warehouse.api.warehouse_apis.create_order": "smart_warehouse.api.warehouse_apis.create_order",
+    "smart_warehouse.api.warehouse_apis.log_scan": "smart_warehouse.api.warehouse_apis.log_scan",
+}
 # Apps
 # ------------------
 

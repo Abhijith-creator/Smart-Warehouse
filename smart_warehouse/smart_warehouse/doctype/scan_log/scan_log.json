@@ -1,0 +1,48 @@
+{
+  "doctype": "DocType",
+  "name": "Scan Log",
+  "module": "Smart Warehouse",
+  "autoname": "hash",
+  "fields": [
+    {
+      "fieldname": "item",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "scanned_by",
+      "fieldtype": "Link",
+      "label": "Scanned By",
+      "options": "Warehouse User",
+      "reqd": 1
+    },
+    {
+      "fieldname": "scan_time",
+      "fieldtype": "Datetime",
+      "label": "Scan Time"
+    },
+    {
+      "fieldname": "scan_type",
+      "fieldtype": "Select",
+      "label": "Scan Type",
+      "options": "Inward\nOutward",
+      "default": "Inward"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

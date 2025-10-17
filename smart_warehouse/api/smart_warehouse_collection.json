@@ -1,0 +1,168 @@
+{
+  "name": "Smart Warehouse APIs",
+  "version": "1.0",
+  "requests": [
+    {
+      "name": "Create Item",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.create_item",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": {
+          "item_code": "IT001",
+          "item_name": "Keyboard",
+          "quantity": 100,
+          "location": "Main Shelf"
+        }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "Item IT001 created successfully" },
+        "error": { "message": "Item IT001 already exists", "error": true }
+      }
+    },
+    {
+      "name": "Get Item",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.get_item",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "item_code": "IT001" }
+      },
+      "tests": [],
+      "response": {
+        "success": { "item_code": "IT001", "item_name": "Keyboard", "quantity": 100, "location": "Main Shelf" },
+        "error": { "message": "Item IT001 not found", "error": true }
+      }
+    },
+    {
+      "name": "Update Item",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.update_item",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "item_code": "IT001", "quantity": 120, "location": "Rack B" }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "Item IT001 updated successfully" },
+        "error": { "message": "Item IT001 not found", "error": true }
+      }
+    },
+    {
+      "name": "Delete Item",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.delete_item",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "item_code": "IT001" }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "Item IT001 deleted successfully" },
+        "error": { "message": "Item IT001 not found", "error": true }
+      }
+    },
+    {
+      "name": "Create Order",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.create_order",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "order_id": "ORD001", "customer_name": "John", "item": "IT001", "quantity": 10 }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "Order ORD001 created successfully" },
+        "error": { "message": "Order ORD001 already exists", "error": true }
+      }
+    },
+    {
+      "name": "Update Order Status",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.update_order_status",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "order_id": "ORD001", "status": "Completed" }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "Order ORD001 status updated to Completed" },
+        "error": { "message": "Order ORD001 not found", "error": true }
+      }
+    },
+    {
+      "name": "List Orders",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.list_orders",
+      "method": "POST",
+      "body": { "mode": "json", "raw": {} },
+      "tests": [],
+      "response": {
+        "success": {
+          "orders": [
+            { "order_id": "ORD001", "customer_name": "John", "item": "IT001", "quantity": 10, "status": "Completed" }
+          ]
+        },
+        "error": { "message": "Error message here", "error": true }
+      }
+    },
+    {
+      "name": "Create Warehouse User",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.create_warehouse_user",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "full_name": "Alice", "email": "alice@test.com", "role": "Staff", "phone_number": "1234567890" }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "User Alice created successfully" },
+        "error": { "message": "User with email alice@test.com already exists", "error": true }
+      }
+    },
+    {
+      "name": "List Warehouse Users",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.list_warehouse_users",
+      "method": "POST",
+      "body": { "mode": "json", "raw": {} },
+      "tests": [],
+      "response": {
+        "success": {
+          "users": [
+            { "full_name": "Alice", "email": "alice@test.com", "role": "Staff", "phone_number": "1234567890" }
+          ]
+        },
+        "error": { "message": "Error message here", "error": true }
+      }
+    },
+    {
+      "name": "Log Scan",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.log_scan",
+      "method": "POST",
+      "body": {
+        "mode": "json",
+        "raw": { "item": "IT001", "scanned_by": "Alice", "scan_type": "Inward", "remarks": "Received" }
+      },
+      "tests": [],
+      "response": {
+        "success": { "message": "Scan logged for item IT001" },
+        "error": { "message": "Missing required fields: item", "error": true }
+      }
+    },
+    {
+      "name": "Get Scan History",
+      "url": "http://localhost:8000/api/method/smart_warehouse.api.warehouse_apis.get_scan_history",
+      "method": "POST",
+      "body": { "mode": "json", "raw": { "item": "IT001" } },
+      "tests": [],
+      "response": {
+        "success": {
+          "logs": [
+            { "item": "IT001", "scanned_by": "Alice", "scan_time": "2025-10-17T12:30:00", "scan_type": "Inward", "remarks": "Received" }
+          ]
+        },
+        "error": { "message": "No scan logs found for item IT001", "error": true }
+      }
+    }
+  ]
+}

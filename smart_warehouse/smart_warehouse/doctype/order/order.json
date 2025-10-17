@@ -1,0 +1,52 @@
+{
+  "doctype": "DocType",
+  "name": "Order",
+  "module": "Smart Warehouse",
+  "autoname": "field:order_id",
+  "fields": [
+    {
+      "fieldname": "order_id",
+      "fieldtype": "Data",
+      "label": "Order ID",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer_name",
+      "fieldtype": "Data",
+      "label": "Customer Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "order_date",
+      "fieldtype": "Date",
+      "label": "Order Date"
+    },
+    {
+      "fieldname": "item",
+      "fieldtype": "Link",
+      "options": "Item",
+      "label": "Item"
+    },
+    {
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "label": "Quantity"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nIn Progress\nCompleted\nCancelled",
+      "default": "Pending"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}
