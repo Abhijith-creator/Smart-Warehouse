@@ -61,6 +61,7 @@ Import **smart_warehouse/api/smart_warehouse_collection.json** in Postman or Thu
 ## 📜 License
 
 MIT License © 2025 Abhijith Anbalagan
+
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)  
 [![Frappe](https://img.shields.io/badge/Frappe-v15-orange)](https://frappeframework.com/)  
 
