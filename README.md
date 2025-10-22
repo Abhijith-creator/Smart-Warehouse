@@ -43,15 +43,15 @@ The Smart Warehouse Management System is built using the following technologies:
 
 Follow these steps to get the Smart Warehouse app running:
 ```bash
-1. **Clone the repo**
-- cd ~/frappe-bench/apps
-- git clone https://github.com/Abhijith-creator/smartwarehouse.git
-- cd ..
+1. Clone the repo
+cd ~/frappe-bench/apps
+git clone https://github.com/Abhijith-creator/smartwarehouse.git
+cd ..
 
-2. **Install the app on your site**
-- bench --site <site_name> install-app smart_warehouse
-- bench --site <site_name> migrate
-- bench build
+2. Install the app on your site
+bench --site <site_name> install-app smart_warehouse
+bench --site <site_name> migrate
+bench build
 ```
 
 ## Test APIs
