@@ -26,7 +26,7 @@ It provides clear responses for both successful operations and error cases, ensu
 - **API-driven**: Easy integration with other applications or front-end interfaces.  
 
 
-## 🛠️ Tech Stack
+## 🧩 Tech Stack
 
 The Smart Warehouse Management System is built using the following technologies:
 
@@ -39,10 +39,10 @@ The Smart Warehouse Management System is built using the following technologies:
 - **Version Control:** Git & GitHub  
 - **Development Server:** Frappe Bench  
 
-## Installation
+## 🛠️  Installation
 
 Follow these steps to get the Smart Warehouse app running:
-
+```bash
 1. **Clone the repo**
 - cd ~/frappe-bench/apps
 - git clone https://github.com/Abhijith-creator/smartwarehouse.git
@@ -52,15 +52,15 @@ Follow these steps to get the Smart Warehouse app running:
 - bench --site <site_name> install-app smart_warehouse
 - bench --site <site_name> migrate
 - bench build
-
+```
 
 ## Test APIs
 
 Import **smart_warehouse/api/smart_warehouse_collection.json** in Postman or Thunder Client and try endpoints like create_item, get_item, update_item, etc.
 
-## License
+## 📜 License
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
+MIT License © 2025 Abhijith Anbalagan
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)  
 [![Frappe](https://img.shields.io/badge/Frappe-v15-orange)](https://frappeframework.com/)  
 
